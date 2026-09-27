@@ -32,9 +32,7 @@ export function Hero() {
                   2000,
                   'AI & ML Enthusiast',
                   2000,
-                  'Full Stack Developer',
-                  2000,
-                  'Open Source Contributor',
+                  'CSE Undergraduate',
                   2000,
                 ]}
                 wrapper="span"
@@ -45,8 +43,7 @@ export function Hero() {
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">
-              Transforming complex problems into elegant solutions. 
-              Specializing in AI/ML, Full-Stack Development, and scalable systems.
+              Building practical AI/ML and software projects with Python, Java, and modern web technologies.
             </p>
 
             {/* Social Links */}
@@ -67,6 +64,10 @@ export function Hero() {
               <a href="https://raw.githubusercontent.com/247r1a05c2-b/portfolio/main/resume1.docx" download className="flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:scale-105 transition-transform">
                 <Download className="w-5 h-5" />
                 Resume
+              </a>
+              <a href="#contact" className="flex items-center gap-2 px-6 py-3 bg-secondary text-foreground border border-border rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                Contact Me
+                <Mail className="w-5 h-5" />
               </a>
               <a href="#projects" className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
                 View Projects
