@@ -10,7 +10,7 @@ export const PORTFOLIO_DATA = {
     github: "https://github.com/247r1a05c2-b",
     githubUsername: "247r1a05c2-b",
     leetcodeUsername: "HUSSAIN_SHAIKIRFAN15",
-    cgpa: "8.46/10",
+    cgpa: "8.45/10",
     college: "CMR Technical Campus, Hyderabad",
     degree: "B.Tech CSE",
     duration: "2024–2028",
@@ -18,7 +18,7 @@ export const PORTFOLIO_DATA = {
   },
 
   summary:
-    "Computer Science Engineering undergraduate (CGPA 8.46/10) with a strong foundation in Java, Python, Data Structures & Algorithms, OOP, DBMS, and SQL, combined with hands-on experience building and deploying Machine Learning, NLP, and Computer Vision applications. Delivered end-to-end AI/ML projects from data preprocessing through live production deployment on Streamlit, with real GitHub repositories and live demo links. Seeking Software Engineering, Java Development, AI/ML, or Data Analyst internship to apply strong problem-solving, full-stack development, and data-driven decision-making skills.",
+    "Computer Science Engineering undergraduate (CGPA 8.45/10) with a strong foundation in Java, Python, Data Structures & Algorithms, Object-Oriented Programming, DBMS, and SQL, combined with hands-on experience building and deploying Machine Learning, NLP, and Computer Vision applications. Proven track record of delivering end-to-end AI/ML projects from data preprocessing through live production deployment on Streamlit, with real GitHub repositories and live demo links. Seeking a Software Engineering, Java Development, AI/ML, or Data Analyst internship to apply strong problem-solving, full-stack development, and data-driven decision-making skills in a fast-paced engineering environment.",
 
   skills: [
     {
@@ -125,28 +125,7 @@ export const PORTFOLIO_DATA = {
     },
   ],
 
-  otherProjects: [
-    {
-      id: "student-result",
-      title: "Student Result Management System",
-      description:
-        "Web-based result management system enabling teachers to input, manage, and publish student results with a clean, accessible interface.",
-      tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-      category: "Web",
-      github: "https://github.com/247r1a05c2-b",
-      demo: null,
-    },
-    {
-      id: "chat-app",
-      title: "Chat Application",
-      description:
-        "Real-time chat application with user authentication, message history, and room-based communication built with Node.js and WebSockets.",
-      tech: ["Node.js", "Express.js", "JavaScript", "HTML", "CSS"],
-      category: "Web",
-      github: "https://github.com/247r1a05c2-b",
-      demo: null,
-    },
-  ],
+  otherProjects: [],
 
   internships: [
     {
@@ -187,7 +166,7 @@ export const PORTFOLIO_DATA = {
       degree: "B.Tech — Computer Science Engineering",
       institution: "CMR Technical Campus, Hyderabad",
       duration: "2024 – 2028",
-      score: "CGPA: 8.46 / 10",
+      score: "CGPA: 8.45 / 10",
       description:
         "Specialising in AI/ML, Data Structures & Algorithms, DBMS, and Full-Stack Development. Active in coding clubs and hackathons.",
     },
@@ -227,13 +206,6 @@ export const PORTFOLIO_DATA = {
       category: "Programming",
     },
     {
-      id: "hackerrank-java-inter",
-      name: "Java (Intermediate)",
-      issuer: "HackerRank",
-      year: "2024",
-      category: "Programming",
-    },
-    {
       id: "sololearn-python",
       name: "Python for Beginners",
       issuer: "SoloLearn",
@@ -252,9 +224,9 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "cgpa",
-      title: "Academic Excellence — 8.46 CGPA",
+      title: "Academic Excellence — 8.45 CGPA",
       description:
-        "Maintaining a strong CGPA of 8.46/10 at CMR Technical Campus while pursuing hands-on development work.",
+        "Maintaining a strong CGPA of 8.45/10 at CMR Technical Campus while pursuing hands-on development work.",
       icon: "🎓",
     },
     {
