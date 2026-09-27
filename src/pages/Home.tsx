@@ -4,7 +4,6 @@ import { About } from '@/components/About';
 import { Skills } from '@/components/Skills';
 import { Experience } from '@/components/Experience';
 import { Projects } from '@/components/Projects';
-import { GitHub } from '@/components/GitHub';
 import { LeetCode } from '@/components/LeetCode';
 import { Education } from '@/components/Education';
 import { Certificates } from '@/components/Certificates';
@@ -16,7 +15,7 @@ import { useScrollspy } from '@/hooks/useScrollspy';
 export default function Home() {
   const sectionIds = [
     'home', 'about', 'skills', 'experience', 'projects',
-    'github', 'leetcode', 'education', 'certificates',
+    'leetcode', 'education', 'certificates',
     'achievements', 'contact'
   ];
   const activeSection = useScrollspy(sectionIds, 200);
@@ -31,7 +30,6 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        <GitHub />
         <LeetCode />
         <Education />
         <Certificates />
