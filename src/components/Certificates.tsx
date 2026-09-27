@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Award, ExternalLink } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -58,12 +58,6 @@ export function Certificates() {
                 <h3 className="font-bold text-lg mb-2 leading-tight">{cert.name}</h3>
                 <p className="text-muted-foreground text-sm font-medium mb-1">{cert.issuer}</p>
                 <p className="text-xs text-muted-foreground mb-4">Issued: {cert.year}</p>
-                
-                <div className="mt-auto pt-4 border-t border-border">
-                  <button className="text-sm font-medium text-highlight hover:text-highlight/80 inline-flex items-center gap-1">
-                    View Credential <ExternalLink className="w-3 h-3" />
-                  </button>
-                </div>
               </motion.div>
             ))}
           </AnimatePresence>
