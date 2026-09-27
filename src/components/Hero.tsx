@@ -64,7 +64,7 @@ export function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-              <a href="#resume" className="flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:scale-105 transition-transform">
+              <a href="https://raw.githubusercontent.com/247r1a05c2-b/portfolio/main/resume1.docx" download className="flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:scale-105 transition-transform">
                 <Download className="w-5 h-5" />
                 Resume
               </a>
