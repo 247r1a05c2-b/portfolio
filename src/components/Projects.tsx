@@ -112,7 +112,7 @@ function GitHubRepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
 }
 
 export function Projects() {
-  const [otherExpanded, setOtherExpanded] = useState(true);
+  const [otherExpanded, setOtherExpanded] = useState(false);
   const { repos, isLoading, error } = useGitHub(PORTFOLIO_DATA.identity.githubUsername);
 
   // Exclude repos already featured as major projects
