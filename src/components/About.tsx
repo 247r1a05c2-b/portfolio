@@ -34,6 +34,15 @@ export function About() {
             {PORTFOLIO_DATA.summary}
           </p>
 
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Currently Learning</p>
+            <div className="flex flex-wrap gap-2">
+              {['Generative AI', 'RAG Systems', 'DSA with Java', 'Machine Learning', 'Full-Stack Development'].map(item => (
+                <span key={item} className="px-3 py-2 rounded-full bg-accent/10 text-accent border border-accent/20 text-sm font-medium">{item}</span>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {quickFacts.map((fact, idx) => (
               <motion.div
