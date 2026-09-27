@@ -3,6 +3,7 @@ import { AnimatedSection } from './AnimatedSection';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import type { FormEvent } from 'react';
 
 export function Contact() {
   const { identity } = PORTFOLIO_DATA;
@@ -119,7 +120,7 @@ export function Contact() {
 function ContactForm({ email }: { email: string }) {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
-  const submit = (event: React.FormEvent) => {
+  const submit = (event: FormEvent) => {
     event.preventDefault();
     const subject = encodeURIComponent('Portfolio enquiry from ' + (name || 'a visitor'));
     const body = encodeURIComponent(message);
