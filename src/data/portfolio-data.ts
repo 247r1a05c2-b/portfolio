@@ -73,6 +73,17 @@ export const PORTFOLIO_DATA = {
 
   majorProjects: [
     {
+      id: "nexarag",
+      title: "NexaRAG — Adaptive AI Knowledge Assistant",
+      description:
+        "Hackathon-ready Retrieval-Augmented Generation platform that ingests PDF, scanned PDF, DOCX, PPTX, TXT and images, uses OCR, hybrid retrieval and Gemini to generate grounded answers with source traceability.",
+      tech: ["Python", "RAG", "Gemini", "ChromaDB", "Embeddings", "Streamlit", "OCR"],
+      category: "GenAI / RAG",
+      github: "https://github.com/247r1a05c2-b/NexaRAG",
+      demo: "https://nexarag12345678.streamlit.app",
+    },
+
+    {
       id: "ai-disease",
       title: "AI Multi-Domain Disease Prediction",
       description:
