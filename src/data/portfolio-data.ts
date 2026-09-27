@@ -193,7 +193,7 @@ export const PORTFOLIO_DATA = {
   certifications: [
     {
       id: "oracle-java",
-      name: "Oracle Java Foundations",
+      name: "Oracle Java Foundations Badge",
       issuer: "Oracle",
       year: "2024",
       category: "Programming",
@@ -202,6 +202,13 @@ export const PORTFOLIO_DATA = {
       id: "hackerrank-java-basic",
       name: "Java (Basic)",
       issuer: "HackerRank",
+      year: "2024",
+      category: "Programming",
+    },
+    {
+      id: "sololearn-java",
+      name: "Java (Basic and Intermediate)",
+      issuer: "SoloLearn",
       year: "2024",
       category: "Programming",
     },
