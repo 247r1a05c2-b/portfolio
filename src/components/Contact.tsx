@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone, Linkedin, Github, ExternalLink } from 'lucide-reac
 import { AnimatedSection } from './AnimatedSection';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export function Contact() {
   const { identity } = PORTFOLIO_DATA;
@@ -67,7 +68,8 @@ export function Contact() {
           </p>
         </div>
 
-        {/* Primary CTA */}
+        <ContactForm email={identity.email} />
+
         <div className="flex justify-center mb-14">
           <motion.a
             href={`mailto:${identity.email}`}
@@ -111,5 +113,27 @@ export function Contact() {
         </div>
       </div>
     </AnimatedSection>
+  );
+}
+
+function ContactForm({ email }: { email: string }) {
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+  const submit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const subject = encodeURIComponent('Portfolio enquiry from ' + (name || 'a visitor'));
+    const body = encodeURIComponent(message);
+    window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  };
+  return (
+    <div className="max-w-2xl mx-auto mb-14 glass p-6 md:p-8 rounded-3xl border border-border">
+      <h3 className="text-xl font-bold mb-2 text-center">Have an opportunity or project in mind?</h3>
+      <p className="text-sm text-muted-foreground text-center mb-6">Send a message and your email client will open with the details ready to send.</p>
+      <form onSubmit={submit} className="space-y-4">
+        <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name" aria-label="Your name" className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent" />
+        <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Your message" aria-label="Your message" rows={4} required className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent resize-none" />
+        <button type="submit" className="w-full py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent/90 transition-colors">Send Message</button>
+      </form>
+    </div>
   );
 }
