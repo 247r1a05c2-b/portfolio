@@ -14,7 +14,6 @@ export function Navbar({ activeSection }: { activeSection: string }) {
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'GitHub', href: '#github' },
     { name: 'LeetCode', href: '#leetcode' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
