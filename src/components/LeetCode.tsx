@@ -81,7 +81,7 @@ export function LeetCode() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-card p-4 rounded-xl border border-border">
                     <Target className="w-5 h-5 text-accent mb-2" />
-                    <p className="font-bold">{stats?.acceptanceRate || 0}%</p>
+                    <p className="font-bold">{stats?.acceptanceRate !== null && stats?.acceptanceRate !== undefined ? `${stats.acceptanceRate}%` : 'N/A'}</p>
                     <p className="text-xs text-muted-foreground">Acceptance</p>
                   </div>
                   <div className="bg-card p-4 rounded-xl border border-border">
@@ -101,9 +101,6 @@ export function LeetCode() {
                     View LeetCode Profile
                     <Flame className="w-4 h-4" />
                   </a>
-                  {stats?.status === 'fallback' && (
-                    <p className="text-xs text-muted-foreground mt-2">Displaying cached stats</p>
-                  )}
                 </div>
               </div>
 
@@ -113,20 +110,20 @@ export function LeetCode() {
                 <div className="flex justify-around items-center">
                   <CircleProgress 
                     value={stats?.easySolved || 0} 
-                    total={stats?.status === 'fallback' ? 120 : (stats?.easySolved || 1) * 2} // Assuming some total for visual 
-                    color="#10B981" // emerald
+                    total={stats?.totalEasy || stats?.easySolved || 0} 
+                    color="#10B981"
                     label="Easy" 
                   />
                   <CircleProgress 
                     value={stats?.mediumSolved || 0} 
-                    total={stats?.status === 'fallback' ? 100 : (stats?.mediumSolved || 1) * 2} 
-                    color="#F59E0B" // amber
+                    total={stats?.totalMedium || stats?.mediumSolved || 0} 
+                    color="#F59E0B"
                     label="Medium" 
                   />
                   <CircleProgress 
                     value={stats?.hardSolved || 0} 
-                    total={stats?.status === 'fallback' ? 30 : (stats?.hardSolved || 1) * 2} 
-                    color="#EF4444" // red
+                    total={stats?.totalHard || stats?.hardSolved || 0} 
+                    color="#EF4444"
                     label="Hard" 
                   />
                 </div>
