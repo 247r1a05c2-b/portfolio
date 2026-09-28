@@ -30,7 +30,7 @@ function parseStats(data: any): LeetCodeStats | null {
     source?.submitStats?.acSubmissionNum?.find((item: any) => item.difficulty === 'All')?.count
   );
 
-  if (!totalSolved && !source) return null;
+  if (!source || !submitStats.length) return null;
 
   const ranking = data?.ranking ?? source?.profile?.ranking ?? source?.ranking ?? null;
 
@@ -85,11 +85,22 @@ export function useLeetCode(username: string) {
           const parsed = parseStats(data);
           if (parsed) {
             setStats(parsed);
+            try { localStorage.setItem('leetcode-stats', JSON.stringify(parsed)); } catch (_) {}
             setIsLoading(false);
             return;
           }
         } catch (_) {}
       }
+
+      try {
+        const cached = localStorage.getItem('leetcode-stats');
+        if (cached) {
+          setStats(JSON.parse(cached));
+          setError('Live LeetCode statistics are temporarily unavailable. Showing the last saved result.');
+          setIsLoading(false);
+          return;
+        }
+      } catch (_) {}
 
       setStats({
         totalSolved: 0,
