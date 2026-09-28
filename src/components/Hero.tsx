@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { Github, Linkedin, Mail, Download, ArrowRight, Rocket, GraduationCap, Code2, BrainCircuit, BriefcaseBusiness } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ArrowRight, Rocket, GraduationCap, Code2, BriefcaseBusiness } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 // @ts-ignore
 const heroPhoto = '/hero-photo.jpeg';
