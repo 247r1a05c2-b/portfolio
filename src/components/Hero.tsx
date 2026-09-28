@@ -81,11 +81,11 @@ export function Hero() {
               </a>
               <a href="#projects" className="flex items-center gap-2 px-6 py-3 bg-secondary text-foreground border border-border rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
                 Explore Projects
-                <Mail className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#contact" className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
                 Let's Connect
-                <ArrowRight className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
