@@ -111,7 +111,7 @@ function ContactForm({ email }: { email: string }) {
   const submit = (event: FormEvent) => {
     event.preventDefault();
     const subject = encodeURIComponent('Portfolio enquiry from ' + (name || 'a visitor'));
-    const body = encodeURIComponent('Name: ' + (name || 'Not provided') + '\\nEmail: ' + (emailAddress || 'Not provided') + '\\n\\n' + message);
+    const body = encodeURIComponent('Name: ' + (name || 'Not provided') + '\nEmail: ' + (emailAddress || 'Not provided') + '\n\n' + message);
     window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
   };
   return (
