@@ -35,11 +35,25 @@ export function About() {
           </p>
 
           <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Open To</p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {['Software Development Intern', 'Java Development Intern', 'Python Development Intern', 'AI/ML Intern'].map(item => (
+                <span key={item} className="px-3 py-2 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 text-sm font-medium">{item}</span>
+              ))}
+            </div>
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Currently Learning</p>
             <div className="flex flex-wrap gap-2">
               {['Generative AI', 'RAG Systems', 'DSA with Java', 'Machine Learning', 'Full-Stack Development'].map(item => (
                 <span key={item} className="px-3 py-2 rounded-full bg-accent/10 text-accent border border-accent/20 text-sm font-medium">{item}</span>
               ))}
+            </div>
+          </div>
+
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Currently Building</p>
+            <div className="bg-card border border-border rounded-2xl p-5">
+              <h4 className="font-bold mb-1">NexaRAG — Adaptive AI Knowledge Assistant</h4>
+              <p className="text-sm text-muted-foreground">Building a grounded RAG workflow for document knowledge bases using embeddings, ChromaDB, hybrid retrieval, and Gemini.</p>
             </div>
           </div>
 
