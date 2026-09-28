@@ -1,4 +1,4 @@
-import { Code2, Target, Trophy, Flame } from 'lucide-react';
+import { Code2, Trophy, Flame } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { useLeetCode } from '@/hooks/useLeetCode';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
@@ -78,14 +78,9 @@ export function LeetCode() {
                 <h3 className="text-3xl font-bold mb-2">{stats?.totalSolved || 0}</h3>
                 <p className="text-muted-foreground font-medium mb-6">Problems Solved</p>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-card p-4 rounded-xl border border-border">
-                    <Target className="w-5 h-5 text-accent mb-2" />
-                    <p className="font-bold">{stats?.acceptanceRate !== null && stats?.acceptanceRate !== undefined ? `${stats.acceptanceRate}%` : 'N/A'}</p>
-                    <p className="text-xs text-muted-foreground">Acceptance</p>
-                  </div>
-                  <div className="bg-card p-4 rounded-xl border border-border">
-                    <Trophy className="w-5 h-5 text-yellow-500 mb-2" />
+                <div className="bg-card p-4 rounded-xl border border-border inline-flex items-center gap-3">
+                  <Trophy className="w-5 h-5 text-yellow-500" />
+                  <div>
                     <p className="font-bold">{stats?.ranking ? stats.ranking.toLocaleString() : 'N/A'}</p>
                     <p className="text-xs text-muted-foreground">Ranking</p>
                   </div>
