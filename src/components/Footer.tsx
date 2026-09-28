@@ -19,7 +19,7 @@ export function Footer() {
               {PORTFOLIO_DATA.identity.shortName}
             </span>
             <p className="text-sm text-muted-foreground">
-              Software Developer & AI/ML Engineer
+              Software Developer · AI/ML · CSE Undergraduate
             </p>
           </div>
 
@@ -49,9 +49,12 @@ export function Footer() {
         </div>
 
         <div className="text-center pt-8 border-t border-border/50">
-          <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-            Made with <span className="text-red-500 text-lg">❤️</span> by {PORTFOLIO_DATA.identity.name}
-          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <a href={PORTFOLIO_DATA.identity.github} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">GitHub</a>
+            <a href={PORTFOLIO_DATA.identity.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">LinkedIn</a>
+            <a href={`https://leetcode.com/${PORTFOLIO_DATA.identity.leetcodeUsername}`} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">LeetCode</a>
+            <a href={`mailto:${PORTFOLIO_DATA.identity.email}`} className="hover:text-accent transition-colors">Email</a>
+          </div>
           <p className="text-xs text-muted-foreground mt-2 opacity-50">
             &copy; {new Date().getFullYear()} All rights reserved.
           </p>
