@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Github } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion } from 'framer-motion';
@@ -71,19 +71,6 @@ export function Contact() {
 
         <ContactForm email={identity.email} />
 
-        <div className="flex justify-center mb-14">
-          <motion.a
-            href={`mailto:${identity.email}`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 px-10 py-4 bg-accent text-white rounded-2xl text-lg font-bold shadow-xl shadow-accent/30 hover:bg-accent/90 transition-colors"
-          >
-            <Mail className="w-6 h-6" />
-            Send Me an Email
-            <ExternalLink className="w-5 h-5 opacity-70" />
-          </motion.a>
-        </div>
-
         {/* Contact cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {contactCards.map((card, idx) => (
@@ -119,11 +106,12 @@ export function Contact() {
 
 function ContactForm({ email }: { email: string }) {
   const [name, setName] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
   const [message, setMessage] = useState('');
   const submit = (event: FormEvent) => {
     event.preventDefault();
     const subject = encodeURIComponent('Portfolio enquiry from ' + (name || 'a visitor'));
-    const body = encodeURIComponent(message);
+    const body = encodeURIComponent('Name: ' + (name || 'Not provided') + '\\nEmail: ' + (emailAddress || 'Not provided') + '\\n\\n' + message);
     window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
   };
   return (
@@ -132,6 +120,7 @@ function ContactForm({ email }: { email: string }) {
       <p className="text-sm text-muted-foreground text-center mb-6">Send a message and your email client will open with the details ready to send.</p>
       <form onSubmit={submit} className="space-y-4">
         <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name" aria-label="Your name" className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent" />
+        <input value={emailAddress} onChange={e => setEmailAddress(e.target.value)} type="email" placeholder="Your email" aria-label="Your email" required className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent" />
         <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Your message" aria-label="Your message" rows={4} required className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent resize-none" />
         <button type="submit" className="w-full py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent/90 transition-colors">Send Message</button>
       </form>
