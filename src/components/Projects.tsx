@@ -4,13 +4,13 @@ import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-function ProjectCard({ project, featured = false }: { project: any; featured?: boolean }) {
+function ProjectCard({ project }: { project: any }) {
   return (
     <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.4 }}
-      className={`group relative flex flex-col justify-between bg-card rounded-3xl p-6 border transition-all shadow-sm ${featured ? 'border-highlight/50 shadow-xl shadow-highlight/10' : 'border-border hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10'}`}>
+      className="group relative flex flex-col justify-between bg-card rounded-3xl p-6 border border-border hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10 transition-all shadow-sm">
       <div className="absolute -top-3 left-5">
-        <span className={`inline-flex items-center gap-1 px-3 py-1 text-white text-xs font-bold rounded-full shadow-lg ${featured ? 'bg-highlight shadow-highlight/30' : 'bg-accent shadow-accent/30'}`}>
-          <Star className="w-3 h-3 fill-white" /> {featured ? 'Featured Project' : 'Major Project'}
+        <span className="inline-flex items-center gap-1 px-3 py-1 bg-accent text-white text-xs font-bold rounded-full shadow-lg shadow-accent/30">
+          <Star className="w-3 h-3 fill-white" /> Major Project
         </span>
       </div>
       <div>
@@ -42,15 +42,9 @@ export function Projects() {
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">A selection of AI/ML, GenAI, computer vision, and software projects built end-to-end.</p>
         </div>
-
-        <div className="mb-12">
-          <ProjectCard project={PORTFOLIO_DATA.featuredProject} featured />
-        </div>
-
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map(category => <button key={category} onClick={() => setFilter(category)} className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${filter === category ? 'bg-accent text-white border-accent' : 'bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground'}`}>{category}</button>)}
         </div>
-
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map(project => <ProjectCard key={project.id} project={project} />)}
         </div>
