@@ -4,6 +4,7 @@ import { About } from '@/components/About';
 import { Skills } from '@/components/Skills';
 import { Experience } from '@/components/Experience';
 import { Projects } from '@/components/Projects';
+import { NexaRAGDeepDive } from '@/components/NexaRAGDeepDive';
 import { LeetCode } from '@/components/LeetCode';
 import { OtherRepositories } from '@/components/OtherRepositories';
 import { Education } from '@/components/Education';
@@ -16,7 +17,7 @@ import { useScrollspy } from '@/hooks/useScrollspy';
 export default function Home() {
   const sectionIds = [
     'home', 'about', 'skills', 'experience', 'projects',
-    'leetcode', 'education', 'certificates',
+    'leetcode', 'nexarag', 'education', 'certificates',
     'achievements', 'contact'
   ];
   const activeSection = useScrollspy(sectionIds, 200);
@@ -31,6 +32,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
+        <NexaRAGDeepDive />
         <LeetCode />
         <OtherRepositories />
         <Education />
