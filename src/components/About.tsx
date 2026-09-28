@@ -1,4 +1,4 @@
-import { MapPin, GraduationCap, Calendar, CheckCircle, Code2 } from 'lucide-react';
+import { MapPin, GraduationCap, Calendar, CheckCircle, Code2, BrainCircuit, Terminal, SearchCheck, Boxes } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion } from 'framer-motion';
@@ -54,6 +54,26 @@ export function About() {
             <div className="bg-card border border-border rounded-2xl p-5">
               <h4 className="font-bold mb-1">NexaRAG — Adaptive AI Knowledge Assistant</h4>
               <p className="text-sm text-muted-foreground">Building a grounded RAG workflow for document knowledge bases using embeddings, ChromaDB, hybrid retrieval, and Gemini.</p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">What I Bring</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { icon: <BrainCircuit className="w-5 h-5" />, title: 'AI / ML Development', text: 'Hands-on projects across machine learning, NLP, computer vision, GenAI and RAG.' },
+                { icon: <Terminal className="w-5 h-5" />, title: 'Software Engineering', text: 'Builds practical applications with Java, Python, React, Flask, Streamlit and SQL.' },
+                { icon: <SearchCheck className="w-5 h-5" />, title: 'Problem Solving', text: 'Uses DSA practice and LeetCode to strengthen algorithmic thinking with Java.' },
+                { icon: <Boxes className="w-5 h-5" />, title: 'End-to-End Projects', text: 'Works across development, ML pipelines, databases, interfaces and deployment.' },
+              ].map((item) => (
+                <div key={item.title} className="bg-card border border-border rounded-2xl p-5 flex gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">{item.icon}</div>
+                  <div>
+                    <h4 className="font-bold mb-1">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
