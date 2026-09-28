@@ -38,7 +38,7 @@ export function Projects() {
     <AnimatedSection id="projects" className="py-24 bg-secondary-bg/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured <span className="text-gradient">Projects</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Major <span className="text-gradient">Projects</span></h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">A selection of AI/ML, GenAI, computer vision, and software projects built end-to-end.</p>
         </div>
