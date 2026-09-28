@@ -5,6 +5,7 @@ import { Skills } from '@/components/Skills';
 import { Experience } from '@/components/Experience';
 import { Projects } from '@/components/Projects';
 import { LeetCode } from '@/components/LeetCode';
+import { OtherRepositories } from '@/components/OtherRepositories';
 import { Education } from '@/components/Education';
 import { Certificates } from '@/components/Certificates';
 import { Achievements } from '@/components/Achievements';
@@ -31,6 +32,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <LeetCode />
+        <OtherRepositories />
         <Education />
         <Certificates />
         <Achievements />
