@@ -72,17 +72,17 @@ export const PORTFOLIO_DATA = {
     },
   ],
 
-  featuredProject: {
-    id: "nexarag",
-    title: "NexaRAG — Adaptive AI Knowledge Assistant",
-    description: "Hackathon-ready Retrieval-Augmented Generation platform for PDF, DOCX and TXT knowledge bases, using embeddings, ChromaDB, hybrid retrieval and Gemini to generate grounded answers with source traceability.",
-    tech: ["Python", "RAG", "Gemini", "ChromaDB", "Embeddings", "Streamlit"],
-    category: "GenAI / RAG",
-    github: "https://github.com/247r1a05c2-b/NexaRAG",
-    demo: null,
-  },
-
   majorProjects: [
+    {
+      id: "nexarag",
+      title: "NexaRAG — Adaptive AI Knowledge Assistant",
+      description: "Hackathon-ready Retrieval-Augmented Generation platform for PDF, DOCX and TXT knowledge bases, using embeddings, ChromaDB, hybrid retrieval and Gemini to generate grounded answers with source traceability.",
+      tech: ["Python", "RAG", "Gemini", "ChromaDB", "Embeddings", "Streamlit"],
+      category: "GenAI / RAG",
+      github: "https://github.com/247r1a05c2-b/NexaRAG",
+      demo: null,
+    },
+
     {
       id: "ai-disease",
       title: "AI Multi-Domain Disease Prediction",
