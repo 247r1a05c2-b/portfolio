@@ -4,10 +4,10 @@ import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-function ProjectCard({ project, featured }: { project: typeof PORTFOLIO_DATA.majorProjects[0]; featured: boolean }) {
+function ProjectCard({ project, featured = false }: { project: any; featured?: boolean }) {
   return (
     <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.4 }}
-      className={`group relative flex flex-col justify-between bg-card rounded-3xl p-6 border transition-all shadow-sm ${featured ? 'md:col-span-2 border-accent/50 shadow-xl shadow-accent/10' : 'border-border hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10'}`}>
+      className={`group relative flex flex-col justify-between bg-card rounded-3xl p-6 border transition-all shadow-sm ${featured ? 'border-highlight/50 shadow-xl shadow-highlight/10' : 'border-border hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10'}`}>
       <div className="absolute -top-3 left-5">
         <span className={`inline-flex items-center gap-1 px-3 py-1 text-white text-xs font-bold rounded-full shadow-lg ${featured ? 'bg-highlight shadow-highlight/30' : 'bg-accent shadow-accent/30'}`}>
           <Star className="w-3 h-3 fill-white" /> {featured ? 'Featured Project' : 'Major Project'}
@@ -24,7 +24,7 @@ function ProjectCard({ project, featured }: { project: typeof PORTFOLIO_DATA.maj
         <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-3xl">{project.description}</p>
       </div>
-      <div className="flex flex-wrap gap-2 mt-auto">{project.tech.map((tech) => <span key={tech} className="px-2.5 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full">{tech}</span>)}</div>
+      <div className="flex flex-wrap gap-2 mt-auto">{project.tech.map((tech: string) => <span key={tech} className="px-2.5 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full">{tech}</span>)}</div>
     </motion.div>
   );
 }
@@ -33,6 +33,7 @@ export function Projects() {
   const [filter, setFilter] = useState('All');
   const categories = ['All', ...Array.from(new Set(PORTFOLIO_DATA.majorProjects.map(p => p.category)))];
   const projects = filter === 'All' ? PORTFOLIO_DATA.majorProjects : PORTFOLIO_DATA.majorProjects.filter(p => p.category === filter);
+
   return (
     <AnimatedSection id="projects" className="py-24 bg-secondary-bg/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,11 +42,17 @@ export function Projects() {
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">A selection of AI/ML, GenAI, computer vision, and software projects built end-to-end.</p>
         </div>
+
+        <div className="mb-12">
+          <ProjectCard project={PORTFOLIO_DATA.featuredProject} featured />
+        </div>
+
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map(category => <button key={category} onClick={() => setFilter(category)} className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${filter === category ? 'bg-accent text-white border-accent' : 'bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground'}`}>{category}</button>)}
         </div>
+
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map(project => <ProjectCard key={project.id} project={project} featured={project.id === 'nexarag' && filter === 'All'} />)}
+          {projects.map(project => <ProjectCard key={project.id} project={project} />)}
         </div>
       </div>
     </AnimatedSection>
