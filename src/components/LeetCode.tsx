@@ -69,6 +69,8 @@ export function LeetCode() {
               <Code2 className="w-64 h-64" />
             </div>
 
+            {error && <div className="mb-6 rounded-xl border border-yellow-500/20 bg-yellow-500/5 px-4 py-3 text-sm text-yellow-600 dark:text-yellow-400">{error}</div>}
+
             <div className="flex flex-col md:flex-row items-center gap-12">
               {/* Left Column: Total & Profile */}
               <div className="flex-1 text-center md:text-left">
