@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { Github, Linkedin, Mail, Download, ArrowRight, Rocket, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ArrowRight, Rocket, GraduationCap, Code2, BrainCircuit, BriefcaseBusiness } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 // @ts-ignore
 const heroPhoto = '/hero-photo.jpeg';
@@ -43,8 +43,22 @@ export function Hero() {
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">
-              CSE undergraduate building AI/ML and software solutions with Python and Java. Seeking Software Development and AI/ML internship opportunities.
+              Building practical AI/ML and software systems with Python and Java, with hands-on work across GenAI/RAG, NLP, computer vision, machine learning, and web development. Open to Software Development and AI/ML internship opportunities.
             </p>
+
+            <div className="grid grid-cols-3 gap-3 max-w-2xl mb-8">
+              {[
+                { icon: <GraduationCap className="w-4 h-4" />, value: PORTFOLIO_DATA.identity.cgpa, label: 'CGPA' },
+                { icon: <Code2 className="w-4 h-4" />, value: String(PORTFOLIO_DATA.majorProjects.length), label: 'Major Projects' },
+                { icon: <BriefcaseBusiness className="w-4 h-4" />, value: 'Open', label: 'For Internships' },
+              ].map((item) => (
+                <div key={item.label} className="glass rounded-2xl border border-border p-3 text-center">
+                  <div className="flex justify-center text-accent mb-1">{item.icon}</div>
+                  <div className="font-bold text-sm">{item.value}</div>
+                  <div className="text-[11px] text-muted-foreground">{item.label}</div>
+                </div>
+              ))}
+            </div>
 
             {/* Social Links */}
             <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
@@ -65,12 +79,12 @@ export function Hero() {
                 <Download className="w-5 h-5" />
                 Resume
               </a>
-              <a href="#contact" className="flex items-center gap-2 px-6 py-3 bg-secondary text-foreground border border-border rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
-                Contact Me
+              <a href="#projects" className="flex items-center gap-2 px-6 py-3 bg-secondary text-foreground border border-border rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                Explore Projects
                 <Mail className="w-5 h-5" />
               </a>
-              <a href="#projects" className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
-                View Projects
+              <a href="#contact" className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-full font-medium hover:scale-105 transition-transform shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                Let's Connect
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
