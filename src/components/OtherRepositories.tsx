@@ -14,15 +14,15 @@ export function OtherRepositories() {
   const [open, setOpen] = useState(false);
 
   return (
-    <AnimatedSection id="github" className="py-16">
+    <AnimatedSection id="github" className="py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <button onClick={() => setOpen(!open)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border bg-card hover:border-accent/50 transition-colors font-medium">
             <Github className="w-5 h-5" />
-            {open ? 'Hide Selected Repositories' : 'Show Selected GitHub Repositories'}
+            {open ? 'Hide More Projects' : 'Explore More GitHub Work'}
             <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />
           </button>
-          <p className="text-sm text-muted-foreground mt-3">Only selected repositories are shown here — not your entire GitHub profile.</p>
+          <p className="text-sm text-muted-foreground mt-3">A small selection of additional projects beyond the major portfolio case studies.</p>
         </div>
 
         {open && (
