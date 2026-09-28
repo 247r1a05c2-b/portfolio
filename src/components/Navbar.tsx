@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon, Sun, Download } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 
@@ -59,6 +59,15 @@ export function Navbar({ activeSection }: { activeSection: string }) {
               </a>
             ))}
             
+            <a
+              href="https://raw.githubusercontent.com/247r1a05c2-b/portfolio/main/resume1.docx"
+              download
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:scale-[1.02] transition-transform"
+            >
+              <Download className="w-4 h-4" />
+              Resume
+            </a>
+
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-secondary transition-colors"
