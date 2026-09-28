@@ -16,6 +16,7 @@ export function Navbar({ activeSection }: { activeSection: string }) {
     { name: 'Projects', href: '#projects' },
     { name: 'LeetCode', href: '#leetcode' },
     { name: 'Education', href: '#education' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Contact', href: '#contact' },
   ];
 
