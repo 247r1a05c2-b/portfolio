@@ -66,54 +66,55 @@ export function useLeetCode(username: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!username) return;
+    if (!username) {
+      setIsLoading(false);
+      return;
+    }
 
     async function fetchStats() {
       setIsLoading(true);
       setError(null);
 
-      const endpoints = [
-        `https://alfa-leetcode-api.onrender.com/${username}`,
-        `https://leetcode-stats.tashif.codes/${username}/stats`,
-      ];
+      try {
+        const response = await tryFetch(`/api/leetcode?username=${encodeURIComponent(username)}`);
 
-      for (const endpoint of endpoints) {
+        if (!response.ok) {
+          const data = await response.json().catch(() => null);
+          throw new Error(data?.error || 'Unable to load LeetCode statistics.');
+        }
+
+        const data = await response.json();
+        const parsed = parseStats(data);
+
+        if (!parsed) {
+          throw new Error('LeetCode statistics returned an unexpected response.');
+        }
+
+        setStats(parsed);
         try {
-          const response = await tryFetch(endpoint);
-          if (!response.ok) continue;
-          const data = await response.json();
-          const parsed = parseStats(data);
-          if (parsed) {
-            setStats(parsed);
-            try { localStorage.setItem('leetcode-stats', JSON.stringify(parsed)); } catch (_) {}
-            setIsLoading(false);
-            return;
+          localStorage.setItem('leetcode-stats', JSON.stringify(parsed));
+        } catch (_) {}
+        setIsLoading(false);
+        return;
+      } catch (_) {
+        try {
+          const cached = localStorage.getItem('leetcode-stats');
+
+          if (cached) {
+            const parsedCache = JSON.parse(cached);
+
+            if (parsedCache?.status === 'success' && parsedCache?.totalSolved > 0) {
+              setStats(parsedCache);
+              setError('Live LeetCode statistics are temporarily unavailable. Showing the last saved result.');
+              setIsLoading(false);
+              return;
+            }
           }
         } catch (_) {}
       }
 
-      try {
-        const cached = localStorage.getItem('leetcode-stats');
-        if (cached) {
-          setStats(JSON.parse(cached));
-          setError('Live LeetCode statistics are temporarily unavailable. Showing the last saved result.');
-          setIsLoading(false);
-          return;
-        }
-      } catch (_) {}
-
-      setStats({
-        totalSolved: 0,
-        easySolved: 0,
-        mediumSolved: 0,
-        hardSolved: 0,
-        totalEasy: 0,
-        totalMedium: 0,
-        totalHard: 0,
-        ranking: null,
-        status: 'unavailable',
-      });
-      setError('Live LeetCode statistics are temporarily unavailable.');
+      setStats(null);
+      setError('Live LeetCode statistics are temporarily unavailable. Please refresh and try again.');
       setIsLoading(false);
     }
 
