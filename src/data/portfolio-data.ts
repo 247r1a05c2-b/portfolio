@@ -85,7 +85,7 @@ export const PORTFOLIO_DATA = {
       id: "ai-disease",
       title: "AI Multi-Domain Disease Prediction",
       description:
-        "Healthcare platform leveraging multiple ML models to predict several diseases from patient input data, improving early-diagnosis accessibility. Complete ML pipeline from preprocessing to live Streamlit deployment.",
+        "Multi-domain disease prediction platform covering plant, human, and animal use cases, combining machine learning, computer vision, Streamlit interfaces, historical records, and analytics into one application.",
       tech: ["Python", "Machine Learning", "Streamlit", "Scikit-learn", "Random Forest"],
       category: "ML / AI",
       github: "https://github.com/247r1a05c2-b/AI-Multi-Domain-Disease-Prediction",
@@ -118,7 +118,7 @@ export const PORTFOLIO_DATA = {
         "Loan approval prediction model with Explainable AI (SHAP values) making ML decisions transparent and interpretable for financial decision-making stakeholders.",
       tech: ["Python", "XAI", "SHAP", "Machine Learning", "Scikit-learn"],
       category: "ML / AI",
-      github: "https://github.com/247r1a05c2-b",
+      github: null,
       demo: null,
     },
   ],
