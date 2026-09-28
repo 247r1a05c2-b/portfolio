@@ -8,7 +8,6 @@ export interface LeetCodeStats {
   totalEasy: number;
   totalMedium: number;
   totalHard: number;
-  acceptanceRate: number | null;
   ranking: number | null;
   status: 'success' | 'unavailable';
 }
@@ -33,7 +32,6 @@ function parseStats(data: any): LeetCodeStats | null {
 
   if (!totalSolved && !source) return null;
 
-  const acceptance = data?.acceptanceRate ?? source?.acceptanceRate ?? null;
   const ranking = data?.ranking ?? source?.profile?.ranking ?? source?.ranking ?? null;
 
   return {
@@ -44,7 +42,6 @@ function parseStats(data: any): LeetCodeStats | null {
     totalEasy: parseNumber(data?.totalEasy ?? data?.allQuestionsCount?.find?.((x: any) => x.difficulty === 'Easy')?.count),
     totalMedium: parseNumber(data?.totalMedium ?? data?.allQuestionsCount?.find?.((x: any) => x.difficulty === 'Medium')?.count),
     totalHard: parseNumber(data?.totalHard ?? data?.allQuestionsCount?.find?.((x: any) => x.difficulty === 'Hard')?.count),
-    acceptanceRate: acceptance === null ? null : parseNumber(acceptance),
     ranking: ranking === null ? null : parseNumber(ranking),
     status: 'success',
   };
@@ -102,7 +99,6 @@ export function useLeetCode(username: string) {
         totalEasy: 0,
         totalMedium: 0,
         totalHard: 0,
-        acceptanceRate: null,
         ranking: null,
         status: 'unavailable',
       });
