@@ -77,7 +77,7 @@ export function LeetCode() {
                 <div className="inline-flex items-center justify-center p-4 bg-orange-500/10 text-orange-500 rounded-2xl mb-6">
                   <Code2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-3xl font-bold mb-2">{stats?.totalSolved || 0}</h3>
+                <h3 className="text-3xl font-bold mb-2">{stats ? stats.totalSolved : "—"}</h3>
                 <p className="text-muted-foreground font-medium mb-6">Problems Solved</p>
                 
                 <div className="bg-card p-4 rounded-xl border border-border inline-flex items-center gap-3">
@@ -106,20 +106,20 @@ export function LeetCode() {
                 <h4 className="font-bold mb-6 text-center">Difficulty Breakdown</h4>
                 <div className="flex justify-around items-center">
                   <CircleProgress 
-                    value={stats?.easySolved || 0} 
-                    total={stats?.totalEasy || stats?.easySolved || 0} 
+                    value={stats?.easySolved ?? 0} 
+                    total={stats?.totalEasy ?? 0} 
                     color="#10B981"
                     label="Easy" 
                   />
                   <CircleProgress 
-                    value={stats?.mediumSolved || 0} 
-                    total={stats?.totalMedium || stats?.mediumSolved || 0} 
+                    value={stats?.mediumSolved ?? 0} 
+                    total={stats?.totalMedium ?? 0} 
                     color="#F59E0B"
                     label="Medium" 
                   />
                   <CircleProgress 
-                    value={stats?.hardSolved || 0} 
-                    total={stats?.totalHard || stats?.hardSolved || 0} 
+                    value={stats?.hardSolved ?? 0} 
+                    total={stats?.totalHard ?? 0} 
                     color="#EF4444"
                     label="Hard" 
                   />
