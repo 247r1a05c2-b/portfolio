@@ -18,6 +18,20 @@ function parseNumber(value: unknown): number {
 }
 
 function parseStats(data: any): LeetCodeStats | null {
+  if (typeof data?.totalSolved === 'number') {
+    return {
+      totalSolved: parseNumber(data.totalSolved),
+      easySolved: parseNumber(data.easySolved),
+      mediumSolved: parseNumber(data.mediumSolved),
+      hardSolved: parseNumber(data.hardSolved),
+      totalEasy: parseNumber(data.totalEasy),
+      totalMedium: parseNumber(data.totalMedium),
+      totalHard: parseNumber(data.totalHard),
+      ranking: data.ranking === null ? null : parseNumber(data.ranking),
+      status: 'success',
+    };
+  }
+
   const source = data?.data?.matchedUser ?? data?.matchedUser ?? data;
   const submitStats = source?.submitStats?.acSubmissionNum ?? [];
 
