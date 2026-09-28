@@ -6,8 +6,8 @@ import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 export function LeetCode() {
   const { stats, isLoading, error } = useLeetCode(PORTFOLIO_DATA.identity.leetcodeUsername);
 
-  const CircleProgress = ({ value, total, color, label }: { value: number, total: number, color: string, label: string }) => {
-    const percentage = total > 0 ? (value / total) * 100 : 0;
+  const CircleProgress = ({ value, total, color, label }: { value: number | null, total: number | null, color: string, label: string }) => {
+    const percentage = total && value !== null ? (value / total) * 100 : 0;
     const radius = 35;
     const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference - (percentage / 100) * circumference;
@@ -41,8 +41,8 @@ export function LeetCode() {
             />
           </svg>
           <div className="flex flex-col items-center text-center leading-none">
-            <span className="font-bold text-lg">{value}</span>
-            <span className="text-[10px] text-muted-foreground">/{total}</span>
+            <span className="font-bold text-lg">{value === null ? '—' : value}</span>
+            <span className="text-[10px] text-muted-foreground">{total === null ? '' : `/${total}`}</span>
           </div>
         </div>
         <span className="mt-2 text-sm font-medium">{label}</span>
@@ -54,9 +54,11 @@ export function LeetCode() {
     <AnimatedSection id="leetcode" className="py-24 bg-secondary-bg/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">LeetCode <span className="text-gradient">Stats</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Problem Solving <span className="text-gradient">LeetCode</span></h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
         </div>
+
+        <p className="text-center text-muted-foreground max-w-2xl mx-auto -mt-10 mb-10">Regular DSA practice with Java, focusing on algorithmic problem solving and core data structures.</p>
 
         {isLoading ? (
           <div className="flex justify-center py-20">
@@ -106,20 +108,20 @@ export function LeetCode() {
                 <h4 className="font-bold mb-6 text-center">Difficulty Breakdown</h4>
                 <div className="flex justify-around items-center">
                   <CircleProgress 
-                    value={stats?.easySolved ?? 0} 
-                    total={stats?.totalEasy ?? 0} 
+                    value={stats ? stats.easySolved : null} 
+                    total={stats ? stats.totalEasy : null} 
                     color="#10B981"
                     label="Easy" 
                   />
                   <CircleProgress 
-                    value={stats?.mediumSolved ?? 0} 
-                    total={stats?.totalMedium ?? 0} 
+                    value={stats ? stats.mediumSolved : null} 
+                    total={stats ? stats.totalMedium : null} 
                     color="#F59E0B"
                     label="Medium" 
                   />
                   <CircleProgress 
-                    value={stats?.hardSolved ?? 0} 
-                    total={stats?.totalHard ?? 0} 
+                    value={stats ? stats.hardSolved : null} 
+                    total={stats ? stats.totalHard : null} 
                     color="#EF4444"
                     label="Hard" 
                   />
