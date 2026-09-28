@@ -65,7 +65,7 @@ export function Contact() {
           </h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto text-lg">
-            Open to internship opportunities and collaborations. Reach out — I'll get back promptly.
+            Currently open to Software Development, Java, Python and AI/ML internship opportunities, as well as meaningful project collaborations.
           </p>
         </div>
 
@@ -116,8 +116,8 @@ function ContactForm({ email }: { email: string }) {
   };
   return (
     <div className="max-w-2xl mx-auto mb-14 glass p-6 md:p-8 rounded-3xl border border-border">
-      <h3 className="text-xl font-bold mb-2 text-center">Have an opportunity or project in mind?</h3>
-      <p className="text-sm text-muted-foreground text-center mb-6">Send a message and your email client will open with the details ready to send.</p>
+      <h3 className="text-xl font-bold mb-2 text-center">Have an internship opportunity or project in mind?</h3>
+      <p className="text-sm text-muted-foreground text-center mb-6">Share the opportunity or project details. Your email client will open with the message prepared for you.</p>
       <form onSubmit={submit} className="space-y-4">
         <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name" aria-label="Your name" className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent" />
         <input value={emailAddress} onChange={e => setEmailAddress(e.target.value)} type="email" placeholder="Your email" aria-label="Your email" required className="w-full px-4 py-3 rounded-xl bg-background border border-border outline-none focus:border-accent" />
