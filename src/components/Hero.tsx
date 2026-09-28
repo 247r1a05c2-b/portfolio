@@ -43,7 +43,7 @@ export function Hero() {
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">
-              Building practical AI/ML and software projects with Python, Java, and modern web technologies.
+              CSE undergraduate building AI/ML and software solutions with Python and Java. Seeking Software Development and AI/ML internship opportunities.
             </p>
 
             {/* Social Links */}
@@ -104,7 +104,7 @@ export function Hero() {
               className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl flex items-center gap-2"
             >
               <Rocket className="w-5 h-5 text-accent" />
-              <span className="font-bold text-sm">{PORTFOLIO_DATA.majorProjects.length + PORTFOLIO_DATA.otherProjects.length}+ Projects</span>
+              <span className="font-bold text-sm">{PORTFOLIO_DATA.majorProjects.length + PORTFOLIO_DATA.otherProjects.length} Projects</span>
             </motion.div>
             <motion.div 
               animate={{ y: [10, -10, 10] }} 
