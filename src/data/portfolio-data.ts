@@ -18,74 +18,38 @@ export const PORTFOLIO_DATA = {
   },
 
   summary:
-    "Computer Science Engineering undergraduate (CGPA 8.45/10) building practical AI/ML and software applications with Java and Python. Hands-on experience across Machine Learning, NLP, Computer Vision, GenAI/RAG, web development, and end-to-end project deployment. Seeking Software Development, Java, Python, or AI/ML internship opportunities to apply problem-solving and engineering skills in real-world projects.",
+    "Computer Science Engineering undergraduate (CGPA 8.45/10) building practical AI/ML, GenAI/RAG, multi-agent systems, and software applications with Java and Python. Built TraceGaurd, a multi-agent AI incident diagnosis platform, during a 36-hour hackathon, with LangGraph, RAG, LLM reasoning, guardrails, human approval, remediation and verification. Also developed NexaRAG, a Retrieval-Augmented Generation knowledge assistant that demonstrates document retrieval, grounded LLM generation, and external information retrieval.",
 
   skills: [
-    {
-      category: "Programming",
-      items: [
-        { name: "Java", proficiency: 80 },
-        { name: "Python", proficiency: 75 },
-        { name: "SQL", proficiency: 70 },
-        { name: "C", proficiency: 65 },
-      ],
-    },
-    {
-      category: "AI / ML",
-      items: [
-        { name: "Machine Learning", proficiency: 70 },
-        { name: "Generative AI", proficiency: 60 },
-        { name: "RAG", proficiency: 60 },
-        { name: "NLP", proficiency: 60 },
-        { name: "Computer Vision", proficiency: 65 },
-        { name: "Scikit-learn", proficiency: 65 },
-        { name: "TensorFlow", proficiency: 55 },
-        { name: "OpenCV", proficiency: 62 },
-      ],
-    },
-    {
-      category: "Development",
-      items: [
-        { name: "React", proficiency: 50 },
-        { name: "HTML", proficiency: 80 },
-        { name: "CSS", proficiency: 80 },
-        { name: "Tailwind CSS", proficiency: 55 },
-        { name: "Streamlit", proficiency: 70 },
-        { name: "Flask", proficiency: 50 },
-      ],
-    },
-    {
-      category: "Tools & Data",
-      items: [
-        { name: "Git", proficiency: 70 },
-        { name: "GitHub", proficiency: 72 },
-        { name: "MySQL", proficiency: 65 },
-        { name: "Pandas", proficiency: 70 },
-        { name: "NumPy", proficiency: 68 },
-        { name: "VS Code", proficiency: 85 },
-        { name: "Jupyter Notebook", proficiency: 68 },
-        { name: "Anaconda", proficiency: 75 },
-        { name: "IntelliJ IDEA", proficiency: 65 },
-      ],
-    },
+    { category: "Programming", items: [{ name: "Java", proficiency: 80 }, { name: "Python", proficiency: 75 }, { name: "SQL", proficiency: 70 }, { name: "C", proficiency: 65 }] },
+    { category: "AI / ML", items: [{ name: "Machine Learning", proficiency: 70 }, { name: "Generative AI", proficiency: 65 }, { name: "RAG", proficiency: 70 }, { name: "LLMs", proficiency: 65 }, { name: "LangGraph", proficiency: 60 }, { name: "NLP", proficiency: 60 }, { name: "Computer Vision", proficiency: 65 }, { name: "Scikit-learn", proficiency: 65 }, { name: "TensorFlow", proficiency: 55 }, { name: "OpenCV", proficiency: 62 }] },
+    { category: "Development", items: [{ name: "React", proficiency: 50 }, { name: "HTML", proficiency: 80 }, { name: "CSS", proficiency: 80 }, { name: "Tailwind CSS", proficiency: 55 }, { name: "Streamlit", proficiency: 70 }, { name: "Flask", proficiency: 50 }] },
+    { category: "Tools & Data", items: [{ name: "Git", proficiency: 70 }, { name: "GitHub", proficiency: 72 }, { name: "MySQL", proficiency: 65 }, { name: "Pandas", proficiency: 70 }, { name: "NumPy", proficiency: 68 }, { name: "VS Code", proficiency: 85 }, { name: "Jupyter Notebook", proficiency: 68 }, { name: "Anaconda", proficiency: 75 }, { name: "IntelliJ IDEA", proficiency: 65 }] },
   ],
 
   majorProjects: [
     {
+      id: "tracegaurd",
+      title: "TraceGaurd — Multi-Agent AI Incident Commander",
+      description: "Built during a 36-hour hackathon. An AI-powered incident diagnosis and remediation platform that monitors client systems, correlates signals, uses RAG and LLM reasoning to identify probable root causes and diagnosis steps, and routes remediation through a Guardrail Agent with mandatory human approval, verification and audit trails.",
+      tech: ["Python", "LangGraph", "RAG", "LLM", "Gemini", "FastAPI", "SQLAlchemy", "Vercel"],
+      category: "GenAI / RAG",
+      github: "https://github.com/247r1a05c2-b/TraceGaurd",
+      demo: "https://tracegaurd-brown.vercel.app",
+    },
+    {
       id: "nexarag",
-      title: "NexaRAG — Adaptive AI Knowledge Assistant",
-      description: "Hackathon-ready Retrieval-Augmented Generation platform for PDF, DOCX and TXT knowledge bases, using embeddings, ChromaDB, hybrid retrieval and Gemini to generate grounded answers with source traceability.",
-      tech: ["Python", "RAG", "Gemini", "ChromaDB", "Embeddings", "Streamlit"],
+      title: "NexaRAG — Adaptive RAG + LLM Knowledge Assistant",
+      description: "A Retrieval-Augmented Generation platform that ingests user knowledge, chunks and retrieves relevant evidence, passes grounded context to an LLM, and displays retrieved evidence before the generated answer. When local data is unavailable, it uses grounded external retrieval and presents available sources.",
+      tech: ["Python", "RAG", "LLM", "Gemini", "ChromaDB", "Embeddings", "Streamlit"],
       category: "GenAI / RAG",
       github: "https://github.com/247r1a05c2-b/NexaRAG",
       demo: null,
     },
-
     {
       id: "ai-disease",
       title: "AI Multi-Domain Disease Prediction",
-      description:
-        "Multi-domain disease prediction platform covering plant, human, and animal use cases, combining machine learning, computer vision, Streamlit interfaces, historical records, and analytics into one application.",
+      description: "Multi-domain disease prediction platform covering plant, human, and animal use cases, combining machine learning, computer vision, Streamlit interfaces, historical records, and analytics into one application.",
       tech: ["Python", "Machine Learning", "Streamlit", "Scikit-learn", "Random Forest"],
       category: "ML / AI",
       github: "https://github.com/247r1a05c2-b/AI-Multi-Domain-Disease-Prediction",
@@ -94,8 +58,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "resume-screening",
       title: "AI-Powered Resume Screening System",
-      description:
-        "Automated candidate-ranking platform using NLP (text parsing, keyword matching, similarity scoring) to shortlist resumes against job requirements, deployed as a production Streamlit application.",
+      description: "Automated candidate-ranking platform using NLP text parsing, keyword matching and similarity scoring to shortlist resumes against job requirements.",
       tech: ["Python", "NLP", "Machine Learning", "Streamlit", "Scikit-learn"],
       category: "ML / AI",
       github: "https://github.com/247r1a05c2-b/Resume-Screening-For-Company-s",
@@ -104,151 +67,36 @@ export const PORTFOLIO_DATA = {
     {
       id: "face-attendance",
       title: "Face Recognition Attendance System",
-      description:
-        "Automated attendance management using real-time Face Recognition and OpenCV, replacing manual roll-call with accurate automated identification and reducing administrative overhead.",
+      description: "Automated attendance management using real-time face recognition and OpenCV for automated identification and attendance tracking.",
       tech: ["Python", "OpenCV", "Computer Vision", "Face Recognition"],
       category: "Computer Vision",
       github: "https://github.com/247r1a05c2-b/face-recognition-attendance",
       demo: null,
     },
-    {
-      id: "loan-approval",
-      title: "Loan Approval Prediction using XAI",
-      description:
-        "Loan approval prediction model with Explainable AI (SHAP values) making ML decisions transparent and interpretable for financial decision-making stakeholders.",
-      tech: ["Python", "XAI", "SHAP", "Machine Learning", "Scikit-learn"],
-      category: "ML / AI",
-      github: null,
-      demo: null,
-    },
   ],
 
   otherProjects: [],
-
   internships: [
-    {
-      id: "csi",
-      company: "CSI Hyderabad",
-      role: "Virtual Intern",
-      domain: "ML & Deep Learning",
-      duration: "June – July 2026",
-      type: "Virtual",
-      description:
-        "Worked on machine learning and deep learning projects, gaining hands-on experience with model training, evaluation, and deployment techniques.",
-    },
-    {
-      id: "apexsolutions",
-      company: "ApexSolutions",
-      role: "Virtual Intern",
-      domain: "Web Development",
-      duration: "June – July 2026",
-      type: "Virtual",
-      description:
-        "Developed and maintained web application features using modern web technologies, contributing to front-end and back-end components.",
-    },
-    {
-      id: "kodbud",
-      company: "KodBud",
-      role: "Virtual Intern",
-      domain: "Machine Learning",
-      duration: "June – July 2026",
-      type: "Virtual",
-      description:
-        "Applied ML techniques to real-world datasets, working on data preprocessing, feature engineering, and predictive modeling tasks.",
-    },
+    { id: "csi", company: "CSI Hyderabad", role: "Virtual Intern", domain: "ML & Deep Learning", duration: "June – July 2026", type: "Virtual", description: "Worked on machine learning and deep learning projects, gaining hands-on experience with model training, evaluation, and deployment techniques." },
+    { id: "apexsolutions", company: "ApexSolutions", role: "Virtual Intern", domain: "Web Development", duration: "June – July 2026", type: "Virtual", description: "Developed and maintained web application features using modern web technologies." },
+    { id: "kodbud", company: "KodBud", role: "Virtual Intern", domain: "Machine Learning", duration: "June – July 2026", type: "Virtual", description: "Applied ML techniques to real-world datasets, working on preprocessing, feature engineering, and predictive modeling." },
   ],
-
   education: [
-    {
-      id: "btech",
-      degree: "B.Tech — Computer Science Engineering",
-      institution: "CMR Technical Campus, Hyderabad",
-      duration: "2024 – 2028",
-      score: "CGPA: 8.45 / 10",
-      description:
-        "Specialising in AI/ML, Data Structures & Algorithms, DBMS, and Full-Stack Development. Active in coding clubs and hackathons.",
-    },
-    {
-      id: "intermediate",
-      degree: "Intermediate (MPC) — Class XII",
-      institution: "Telangana State Board",
-      duration: "2022 – 2024",
-      score: "92%",
-      description:
-        "Mathematics, Physics, Chemistry. Strong analytical and problem-solving foundation.",
-    },
-    {
-      id: "tenth",
-      degree: "Secondary School — Class X",
-      institution: "Telangana State Board",
-      duration: "2021 – 2022",
-      score: "CGPA: 9.7 / 10",
-      description:
-        "Consistent academic excellence across all subjects with a focus on Mathematics and Sciences.",
-    },
+    { id: "btech", degree: "B.Tech — Computer Science Engineering", institution: "CMR Technical Campus, Hyderabad", duration: "2024 – 2028", score: "CGPA: 8.45 / 10", description: "Specialising in AI/ML, Data Structures & Algorithms, DBMS, and Full-Stack Development." },
+    { id: "intermediate", degree: "Intermediate (MPC) — Class XII", institution: "Telangana State Board", duration: "2022 – 2024", score: "92%", description: "Mathematics, Physics, Chemistry." },
+    { id: "tenth", degree: "Secondary School — Class X", institution: "Telangana State Board", duration: "2021 – 2022", score: "CGPA: 9.7 / 10", description: "Strong foundation in Mathematics and Sciences." },
   ],
-
   certifications: [
-    {
-      id: "oracle-java",
-      name: "Oracle Java Foundations Badge",
-      issuer: "Oracle",
-      year: "2024",
-      category: "Programming",
-    },
-    {
-      id: "hackerrank-java-basic",
-      name: "Java (Basic)",
-      issuer: "HackerRank",
-      year: "2024",
-      category: "Programming",
-    },
-    {
-      id: "sololearn-java",
-      name: "Java (Basic and Intermediate)",
-      issuer: "SoloLearn",
-      year: "2024",
-      category: "Programming",
-    },
-    {
-      id: "sololearn-python",
-      name: "Python for Beginners",
-      issuer: "SoloLearn",
-      year: "2024",
-      category: "Programming",
-    },
+    { id: "oracle-java", name: "Oracle Java Foundations Badge", issuer: "Oracle", year: "2024", category: "Programming" },
+    { id: "hackerrank-java-basic", name: "Java (Basic)", issuer: "HackerRank", year: "2024", category: "Programming" },
+    { id: "sololearn-java", name: "Java (Basic and Intermediate)", issuer: "SoloLearn", year: "2024", category: "Programming" },
+    { id: "sololearn-python", name: "Python for Beginners", issuer: "SoloLearn", year: "2024", category: "Programming" },
   ],
-
   achievements: [
-    {
-      id: "projects",
-      title: "End-to-End AI/ML Projects",
-      description:
-        "Delivered 4 complete AI/ML projects with live Streamlit deployments, covering healthcare, NLP, Computer Vision, and Explainable AI.",
-      icon: "🚀",
-    },
-    {
-      id: "cgpa",
-      title: "Academic Excellence — 8.45 CGPA",
-      description:
-        "Maintaining a strong CGPA of 8.45/10 at CMR Technical Campus while pursuing hands-on development work.",
-      icon: "🎓",
-    },
-    {
-      id: "internships",
-      title: "3 Virtual Internships",
-      description:
-        "Completed 3 virtual internships in ML, Deep Learning, and Web Development within a single academic year.",
-      icon: "💼",
-    },
-    {
-      id: "leetcode",
-      title: "Active Competitive Programmer",
-      description:
-        "Solving problems across Easy, Medium, and Hard categories on LeetCode, sharpening DSA skills.",
-      icon: "🏆",
-    },
+    { id: "tracegaurd-hackathon", title: "Built TraceGaurd in a 36-Hour Hackathon", description: "Designed and implemented a multi-agent AI incident diagnosis platform with LangGraph, RAG, LLM reasoning, guardrails, human approval, remediation and verification under a 36-hour hackathon constraint.", icon: "⚡" },
+    { id: "nexarag", title: "Built a RAG + LLM Knowledge Assistant", description: "Developed NexaRAG to demonstrate retrieval, evidence grounding, LLM generation, and external information retrieval in a practical AI application.", icon: "🧠" },
+    { id: "cgpa", title: "Academic Excellence — 8.45 CGPA", description: "Maintaining a strong CGPA of 8.45/10 at CMR Technical Campus while pursuing hands-on development work.", icon: "🎓" },
+    { id: "internships", title: "3 Virtual Internships", description: "Completed virtual internships across ML, Deep Learning, and Web Development.", icon: "💼" },
   ],
-
   hobbies: ["Competitive Programming", "Open Source Contribution", "Machine Learning Research", "Problem Solving"],
 };
