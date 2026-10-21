@@ -41,7 +41,7 @@ export const PORTFOLIO_DATA = {
       id: "nexarag",
       title: "NexaRAG — Adaptive RAG + LLM Knowledge Assistant",
       description: "A Retrieval-Augmented Generation platform that ingests user knowledge, chunks and retrieves relevant evidence, passes grounded context to an LLM, and displays retrieved evidence before the generated answer. When local data is unavailable, it uses grounded external retrieval and presents available sources.",
-      tech: ["Python", "RAG", "LLM", "Gemini", "Lexical Retrieval", "FastAPI", "Streamlit"],
+      tech: ["Python", "RAG", "LLM", "Gemini", "ChromaDB", "Embeddings", "Streamlit"],
       category: "GenAI / RAG",
       github: "https://github.com/247r1a05c2-b/NexaRAG",
       demo: null,
